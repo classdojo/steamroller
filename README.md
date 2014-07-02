@@ -17,7 +17,10 @@ rollout.domain("teach.classdojo.com").apps([{
     }
   ],
   bootstrapUrl: "http://canary.domain.com/bootstrap.json"
-}]).pick({
+}])
+
+
+rollout.domain("teach.classdojo.com").bootstrap({
   ip: "50.403.20.1",
   user: {
     metadata: {
@@ -26,6 +29,7 @@ rollout.domain("teach.classdojo.com").apps([{
   }
 }, function (err, bootstrap) {
   // loaded bootstrap content
+  res.end(bootstrap);
 });
 
 ```
