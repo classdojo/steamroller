@@ -8,7 +8,7 @@ express         = require("express");
 var rollout = steamroller();
 
 
-rollout.domain("teach.classdojo.com").config({
+rollout.domain("teach.classdojo.com").apps([{
   test: [
     {
       percentage: {
@@ -17,7 +17,7 @@ rollout.domain("teach.classdojo.com").config({
     }
   ],
   bootstrapUrl: "http://canary.domain.com/bootstrap.json"
-}).pick({
+}]).pick({
   ip: "50.403.20.1",
   user: {
     metadata: {
@@ -28,6 +28,15 @@ rollout.domain("teach.classdojo.com").config({
   // loaded bootstrap content
 });
 
+```
 
 
+Browser Example:
+
+
+```javascript
+var steamroller = require("steamroller");
+steamroller.load("/bootstrap.json", function () {
+
+});
 ```

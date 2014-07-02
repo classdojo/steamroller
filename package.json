@@ -1,10 +1,14 @@
 {
   "name": "steamroller",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "steamroller ===========",
   "main": "./lib/server/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "browser": {
+    ".": "./lib/browser/index.js",
+    "head": "./lib/browser/vendor/head.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +26,11 @@
   },
   "dependencies": {
     "browserify": "^4.2.0",
-    "sift": "0.0.17"
+    "sift": "0.0.17",
+    "toarray": "0.0.1",
+    "superagent": "0.18.0",
+    "mediocre": "0.0.14",
+    "domready": "1.0.5",
+    "sizzle": "2.0.0"
   }
 }

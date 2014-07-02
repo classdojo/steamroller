@@ -17,5 +17,20 @@ describe("unit/basic#", function () {
     });
 
     expect(i).to.be(2);
+  });
+
+  it("can create a domain", function () {
+      steamroller().domain("teach.classdojo.com");
+  });
+
+  it("caches a domain", function () {
+    var sr = steamroller();
+    var domain = sr.domain("abc");
+    domain.i = 1;
+    expect(sr.domain("abc").i).to.be(1);
   })
+
+  it("can register apps in the first arg of a domain", function () {
+
+  });
 });
