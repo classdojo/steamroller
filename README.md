@@ -8,16 +8,26 @@ express         = require("express");
 var rollout = steamroller();
 
 
-rollout.domain("teach.classdojo.com").apps([{
-  test: [
-    {
-      percentage: {
-        "ip": 10
+rollout.domain("teach.classdojo.com").apps([
+
+  // canary
+  {
+    test: [
+      {
+        percentage: {
+          "ip": 10
+        }
       }
-    }
-  ],
-  bootstrapUrl: "http://canary.domain.com/bootstrap.json"
-}])
+    ],
+    bootstrapUrl: "http://canary.domain.com/bootstrap.json"
+  },
+
+  // master
+  {
+    bootstrapUrl: "http://master.domain.com/bootstrap.json"
+  }
+
+]);
 
 
 rollout.domain("teach.classdojo.com").bootstrap({
