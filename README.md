@@ -34,9 +34,6 @@ rollout.domain("teach.classdojo.com").apps([{
 Browser Example:
 
 
-```javascript
-var steamroller = require("steamroller");
-steamroller.load("/bootstrap.json", function () {
-
-});
+```html
+<script type="text/javascript" src="/js/steamroller.js" data-rollout="/bootstrap.json"></script>
 ```
