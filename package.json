@@ -1,6 +1,6 @@
 {
   "name": "steamroller",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "steamroller ===========",
   "main": "./lib/server/index.js",
   "scripts": {
@@ -23,7 +23,8 @@
   "devDependencies": {
     "expect.js": "^0.3.1",
     "mocha": "^1.20.1",
-    "sinon": "^1.10.2"
+    "sinon": "^1.10.2",
+    "uglify-js": "^2.4.14"
   },
   "dependencies": {
     "browserify": "^4.2.0",

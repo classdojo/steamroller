@@ -57,7 +57,7 @@ describe("unit/basic#", function () {
     });
   });
 
-  it("properly loads a bootstrap url", function () {
+  it("properly loads a bootstrap url without any tests", function () {
     var stub = sinon.stub(superagent.Request.prototype, "end");
     stub.yields(null, {
       body: {
@@ -77,5 +77,12 @@ describe("unit/basic#", function () {
     });
     stub.restore();
   });
+
+
+  it("can pick an app based on ip percentage", function () {
+
+  });
+
+
 
 });
