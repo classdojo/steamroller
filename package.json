@@ -1,0 +1,27 @@
+{
+  "name": "steamroller",
+  "version": "0.0.0",
+  "description": "steamroller ===========",
+  "main": "./lib/server/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/classdojo/steamroller.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/classdojo/steamroller/issues"
+  },
+  "homepage": "https://github.com/classdojo/steamroller",
+  "devDependencies": {
+    "expect.js": "^0.3.1",
+    "mocha": "^1.20.1"
+  },
+  "dependencies": {
+    "browserify": "^4.2.0",
+    "sift": "0.0.17"
+  }
+}
