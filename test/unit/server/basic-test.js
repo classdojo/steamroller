@@ -1,5 +1,7 @@
-var steamroller = require("../.."),
-expect = require("expect.js");
+var steamroller = require("../../.."),
+expect = require("expect.js"),
+superagent = require("superagent"),
+sinon      = require("sinon");
 
 describe("unit/basic#", function () {
 
@@ -30,7 +32,50 @@ describe("unit/basic#", function () {
     expect(sr.domain("abc").i).to.be(1);
   })
 
-  it("can register apps in the first arg of a domain", function () {
+  it("can register an app in the first arg of a domain", function () {
+    var domain = steamroller().domain("teach.classdojo.com", {
+      test: {}
+    });
 
+    expect(domain.apps().length).to.be(1);
   });
+
+  it("can register multiple apps in the first arg of a domain", function () {
+    var domain = steamroller().domain("teach.classdojo.com", [{
+      test: {}
+    }, { test: {} }]);
+
+    expect(domain.apps().length).to.be(2);
+  });
+
+  it("can pick an application", function (next) {
+    steamroller().domain("teach.classdojo.com", {
+      name: "abba"
+    }).pick({}, function (err, app) {
+      expect(app.config.name).to.be("abba");
+      next();
+    });
+  });
+
+  it("properly loads a bootstrap url", function () {
+    var stub = sinon.stub(superagent.Request.prototype, "end");
+    stub.yields(null, {
+      body: {
+        load: [
+          "js/app.js",
+          "css/app.css"
+        ]
+      }
+    });
+
+    steamroller().domain("teach.classdojo.com", {
+      name: "abba",
+      bootstrapUrl: "http://sub.domain.com:8080"
+    }).bootstrap({}, function (err, bootstrap) {
+      expect(bootstrap.load[0]).to.be("http://sub.domain.com:8080/js/app.js");
+      expect(bootstrap.load[1]).to.be("http://sub.domain.com:8080/css/app.css");
+    });
+    stub.restore();
+  });
+
 });

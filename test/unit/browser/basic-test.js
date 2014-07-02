@@ -1,3 +1,4 @@
+return;
 var steamroller = require("../../lib/browser"),
 expect = require("expect.js");
 

@@ -22,7 +22,8 @@
   "homepage": "https://github.com/classdojo/steamroller",
   "devDependencies": {
     "expect.js": "^0.3.1",
-    "mocha": "^1.20.1"
+    "mocha": "^1.20.1",
+    "sinon": "^1.10.2"
   },
   "dependencies": {
     "browserify": "^4.2.0",
@@ -31,6 +32,8 @@
     "superagent": "0.18.0",
     "mediocre": "0.0.14",
     "domready": "1.0.5",
-    "sizzle": "2.0.0"
+    "sizzle": "2.0.0",
+    "memoizee": "^0.3.4",
+    "comerr": "0.0.6"
   }
 }
