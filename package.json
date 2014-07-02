@@ -1,6 +1,6 @@
 {
   "name": "steamroller",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "steamroller ===========",
   "main": "./lib/server/index.js",
   "scripts": {
