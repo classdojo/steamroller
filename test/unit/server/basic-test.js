@@ -72,8 +72,9 @@ describe("unit/basic#", function () {
       name: "abba",
       bootstrapUrl: "http://sub.domain.com:8080"
     }).bootstrap({}, function (err, bootstrap) {
-      expect(bootstrap.load[0]).to.be("http://sub.domain.com:8080/js/app.js");
-      expect(bootstrap.load[1]).to.be("http://sub.domain.com:8080/css/app.css");
+      expect(bootstrap.host).to.be("http://sub.domain.com:8080");
+      expect(bootstrap.load[0]).to.be("js/app.js");
+      expect(bootstrap.load[1]).to.be("css/app.css");
     });
     stub.restore();
   });
